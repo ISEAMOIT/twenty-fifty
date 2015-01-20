@@ -115,7 +115,7 @@ window.twentyfifty.views.costs_in_context = function() {
     'stroke': 'none'
     });
     overlays.insertAfter(this.incremental_overlay);
-    this.r.text(this.x(0), this.h - 5, "The absolute cost to society of the whole energy system (mean undiscounted real pounds per person per year 2010-2050)").attr({
+    this.r.text(this.x(0), this.h - 5, "The absolute cost to society of the whole energy system (mean undiscounted real dollar per person per year 2010-2050)").attr({
       'text-anchor': 'start',
       'font-weight': 'bold',
       'fill': '#008000'
@@ -189,7 +189,7 @@ window.twentyfifty.views.costs_in_context = function() {
       });
     } else if (_id === (twentyfifty.getComparator() || twentyfifty.default_comparator_code)) {
       this.comparator = pathway;
-      this.r.text(this.x(total_cost), 10, "The extra cost to society above that of the '" + (twentyfifty.pathwayName(_id, "comparison")) + "' pathway (mean £/person/year 2010-2050)").attr({
+      this.r.text(this.x(total_cost), 10, "The extra cost to society above that of the '" + (twentyfifty.pathwayName(_id, "comparison")) + "' pathway (mean $/person/year 2010-2050)").attr({
         'text-anchor': 'start',
         'font-weight': 'bold',
         'fill': '#f00'
@@ -256,7 +256,8 @@ window.twentyfifty.views.costs_in_context = function() {
     if (pathway.ghg_reduction_from_1990 < 0.8) {
       bar.message.attr({
         x: this.x(total_cost + total_range) + 100,
-        text: "This pathway does not reduce emissions by at least 80% on 1990 levels"
+        text: ""
+//      text: "This pathway does not reduce emissions by at least 80% on 1990 levels"
       });
       return bar.message.toFront();
     } else {

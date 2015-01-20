@@ -40,41 +40,41 @@ twentyfifty.views.energy_security = function() {
   // This is called when the user chooses this view, after this.setup
   // It is then called again every time the user chooses a different pathway
   this.updateResults = function(pathway) {
-    updateBalancingSection(pathway);
+ //   updateBalancingSection(pathway);
     updateImportsSection(pathway);
     updatedDiversitySection(pathway);
   };
 
-  updateBalancingSection = function(pathway) {
+ // updateBalancingSection = function(pathway) {
 
     // We only present the data for 2050 (the last column in the table)
-    if(pathway.balancing[1][0] == "Automatically built CCGT gas") {
-      ccgt = pathway.balancing[1][pathway.balancing[1].length - 1];
-    } else {
-      console.log("Automatically built CCGT gas is not the first row in the balancing table");
-      ccgt = "UNDEFINED";
-    }
+ //   if(pathway.balancing[1][0] == "Automatically built CCGT gas") {
+ //     ccgt = pathway.balancing[1][pathway.balancing[1].length - 1];
+ //   } else {
+ //     console.log("Automatically built CCGT gas is not the first row in the balancing table");
+ //     ccgt = "UNDEFINED";
+ //   }
 
     // We only present the data for 2050 (the last column in the table)
-    if(pathway.balancing[2][0] == "Automatically built peaking gas") {
-      peaking = pathway.balancing[2][pathway.balancing[2].length - 1];
-    } else {
-      console.log("Automatically built peaking gas is not the second row in the balancing table");
-      peaking = "UNDEFINED";
-    }
+ //   if(pathway.balancing[2][0] == "Automatically built peaking gas") {
+ //     peaking = pathway.balancing[2][pathway.balancing[2].length - 1];
+ //   } else {
+ //     console.log("Automatically built peaking gas is not the second row in the balancing table");
+ //     peaking = "UNDEFINED";
+ //   }
 
     // This is the amount of CCGT that is automatically built to cover annual shortfall
-    results.select("span#pathway_balancing_ccgt").text(format_round(ccgt));
+ //   results.select("span#pathway_balancing_ccgt").text(format_round(ccgt));
     // This is the amount of OGT that is automatically built to cover the worst part of the year
-    results.select("span#pathway_balancing_peaking").text(format_round(peaking));
+ //    results.select("span#pathway_balancing_peaking").text(format_round(peaking));
     
     // This hides the paragraph about automatically building CCGT unless it is needed
-    if( ccgt == "UNDEFINED" || ccgt > 0) {
-      results.select("p#autobuild_text").attr("style", "display: normal;");
-    } else {
-      results.select("p#autobuild_text").attr("style", "display: none;");
-    }
-  };
+ //   if( ccgt == "UNDEFINED" || ccgt > 0) {
+ //     results.select("p#autobuild_text").attr("style", "display: normal;");
+ //   } else {
+ //     results.select("p#autobuild_text").attr("style", "display: none;");
+ //   }
+ // };
 
   updatedDiversitySection = function(pathway) {
     // This takes the data in the form of the excel table
@@ -84,7 +84,7 @@ twentyfifty.views.energy_security = function() {
     data = arrangeData(pathway.diversity);
 
     // This creates a total of the % contribution of each fuel in 2007 and 2050
-    data.forEach(function(d) { d.total =  (+d['2007']+d['2050']) });
+    data.forEach(function(d) { d.total =  (+d['2010']+d['2050']) });
     // This removes fuels that aren't used
     data = data.filter(function(d) { return d.total > 0.01 });
     // This sorts the table so that the most important fuels are at the top
@@ -107,7 +107,7 @@ twentyfifty.views.energy_security = function() {
     cells = rows.selectAll("td").data(function(d) { 
       return [
         d["Vector"], 
-        format_percent(d['2007']),
+        format_percent(d['2010']),
         "",
         format_percent(d['2050'])
       ]; 
@@ -131,13 +131,13 @@ twentyfifty.views.energy_security = function() {
         console.log("Error, the imports quanitity and imports proportion table must be sorted identically", p, d, i);
         return {};
       }
-      total = +d['2007'] + d['2050'];
+      total = +d['2010'] + d['2050'];
       return { 
          'name': d.Vector, 
          'total': total, 
-         'quantity_2007': +d['2007'],
+         'quantity_2010': +d['2010'],
          'quantity_2050': +d['2050'],
-         'proportion_2007': +p['2007'],
+         'proportion_2010': +p['2010'],
          'proportion_2050': +p['2050']
       };
     });
@@ -166,8 +166,8 @@ twentyfifty.views.energy_security = function() {
     cells = rows.selectAll("td").data(function(d) { 
       return [
         d.name, 
-        format_round(d.quantity_2007),
-        format_percent(d.proportion_2007),
+        format_round(d.quantity_2010),
+        format_percent(d.proportion_2010),
         "&nbsp;",
         format_round(d.quantity_2050),
         format_percent(d.proportion_2050)

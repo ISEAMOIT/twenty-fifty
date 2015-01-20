@@ -40,7 +40,7 @@
 
       <div id='name'>
         <!-- Change this to link to your country website -->
-        <a href='http://www.decc.gov.uk/2050'>The VN 2050 Calculator</a>
+        <a href='http://Vietnamcalculator2050pathways.atmt.gov.vn'>The VN 2050 Calculator</a>
       </div>
 
       <div id='examples'>
@@ -54,13 +54,13 @@
         <a class='view' data-view='electricity' href='#'>Electricity</a>
         <a class='view' data-view='energy_security' href='#'>Security</a>
         <a class='view' data-view='sankey' href='#'>Flows</a>
-       <!-- <a class='view' data-view='map' href='#'>Map</a> -->
-        <a class='view' data-view='story' href='#'>Story</a>
+        <a class='view' data-view='map' href='#'>Map</a>
+       <!-- <a class='view' data-view='story' href='#'>Story</a> -->
         <a class='newdropdown' data-dropdown='#cost_choices' href='#' id='cost_choice'>Costs</a>
-        <a class='view' data-view='air_quality' href='#'>Air</a>
-        <a class='view' data-view='share' href='#'>Share</a>
+        <!-- <a class='view' data-view='air_quality' href='#'>Air</a> -->
+        <!-- <a class='view' data-view='share' href='#'>Share</a> -->
         <!-- Change this to link to your own country website documentation -->
-        <a href='http://2050-calculator-tool-wiki.decc.gov.uk'>Docs</a>
+        <a href='http://Vietnamcalculator2050pathways.atmt.gov.vn'>Docs</a>
       </div>
     </div>
 
@@ -76,7 +76,7 @@
         <a href='#' onclick="twentyfifty.switchPathway('<%= pathway[:code] %>');$('ul#savedpathway_choices').toggle()"><%= pathway[:name] %></a>
       <% end %>
       <!-- Change this to point to your local website -->
-      <a href='http://2050-calculator-tool-wiki.decc.gov.uk/pages/122'>More&hellip;</a>
+      <a href='http://Vietnamcalculator2050pathways.atmt.gov.vn'>More&hellip;</a>
     </div>
     <!-- This appears while the tool is waiting for data from the server -->
     <div id='calculating'>
@@ -90,7 +90,7 @@
       <div id='demand'>
         <table>
           <!-- One row per choice -->
-          <% structure.choices[21..39].each do |choice| %>
+          <% structure.choices[16..33].each do |choice| %>
             <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
               <td class='name'>
                 <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
@@ -115,7 +115,7 @@
       <!-- The middle column -->
       <div id='supply'>
         <table>
-          <% structure.choices[0..20].each do |choice| %>
+          <% structure.choices[0..15].each do |choice| %>
             <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
               <td class='name'>
                 <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
@@ -141,7 +141,7 @@
       <div id='other'>
         <table>
           <!-- this should actually go up to choice 42, but that isn't ready for prime time yet -->
-          <% structure.choices[40..41].each do |choice| %>
+          <% structure.choices[34..35].each do |choice| %>
             <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
               <td class='name'>
                 <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
@@ -169,10 +169,10 @@
           <tr><td><div class='level2'>2</div></td><td>Viewed as ambitious, but reasonable by most experts.</td></tr>
           <tr><td><div class='level3'>3</div></td><td>Viewed as unlikely without significant change from the current system and/or significant technological breakthroughs</td></tr>
           <tr><td><div class='level4'>4</div></td><td>The upper end of what is thought to be physically plausible by the most optimistic observer.</td></tr>
-          <tr><td><div class='alternate'>A</div>&ndash;<div class='alternate'>D</div></td><td>A range of options where one alternative is not neccesiarily harder than another</td></tr>
-          <tr class='primary_energy_notes'><td>Total used in the UK<sup>1</sup></td><td>Primary energy supply is normally higher than final energy demand, because of the energy used to generate electricity.</td></tr>
-          <tr class='primary_energy_notes'><td>Targets<sup>2</sup></td><td>The targets up to 2027 exclude international aviation and shipping. They are also calculated as five year 'budgets', rather than the single year targets shown here.</td></tr>
-          <tr class='primary_energy_notes'><td>Total<sup>3</sup></td><td>The total includes the reduction in emissions from carbon capture and storage and from growing new biomass to replace that used (the bioenergy credit).</td></tr> 
+         <!-- <tr><td><div class='alternate'>A</div>&ndash;<div class='alternate'>D</div></td><td>A range of options where one alternative is not neccesiarily harder than another</td></tr> -->
+        <!--  <tr class='primary_energy_notes'><td>Total used in the UK<sup>1</sup></td><td>Primary energy supply is normally higher than final energy demand, because of the energy used to generate electricity.</td></tr> -->
+       <!--   <tr class='primary_energy_notes'><td>Targets<sup>2</sup></td><td>The targets up to 2027 exclude international aviation and shipping. They are also calculated as five year 'budgets', rather than the single year targets shown here.</td></tr> -->
+       <!--   <tr class='primary_energy_notes'><td>Total<sup>3</sup></td><td>The total includes the reduction in emissions from carbon capture and storage and from growing new biomass to replace that used (the bioenergy credit).</td></tr> -->
       </table>
       </div>
     </div>
@@ -180,7 +180,7 @@
     <div id='tooltip'></div>
     <div id='footer'>
       <!-- Change this to link to your country's website -->
-      All the assumptions and calculations are available in a spreadsheet. Download <a href='/model.xlsx'>Excel <%= structure.reported_calculator_version %> <%= %></a> (<a href='http://2050-calculator-tool-wiki.decc.gov.uk/pages/140'>Version history</a>). The source code for this site is available under an open source licence from <a href='http://github.com/decc/twenty-fifty'>http://github.com/decc/twenty-fifty</a>
+      All the assumptions and calculations are available in a spreadsheet. Download <a href='/model.xlsx'>Excel <%= structure.reported_calculator_version %> <%= %></a> (<a href='http://Vietnamcalculator2050pathways.atmt.gov.vn'>Version history</a>). The source code for this site is available under an open source licence from <a href='http://github.com/decc/twenty-fifty'>http://github.com/decc/twenty-fifty</a>
     </div>
     <!-- The following html is only displayed on screen when a user selects a particular view -->
     <div id='snippets'>
@@ -221,19 +221,22 @@
             </div>
           </div>
         </div>
+
         <div id="energysecurity">
-          <div id="balancing" class="column">
-            <h2>Balancing electricity supply and demand</h2>
-            <p id='autobuild_text'><span id='pathway_balancing_ccgt'></span> GW of conventional gas electricity generation plant has been assumed to have been built by 2050, to cover the gap between average electricity demand and the amount of low carbon generation selected in this pathway.</p>
-            <p>This tool does not model the hourly, daily or even seasonal operation of the electricity grid. It presents annual averages. Therefore it does not correctly represent the peaks and troughs of electricity demand.</p>
-            <p>To go some way to addressing this flaw, the tool applies a simulated stress test to your pathway of five cold, almost windless, days. This is described in more detail <a href="/assets/onepage/49.pdf" target="_new">here</a>. In this case, the stress test implies that <span id='pathway_balancing_peaking'></span> GW of additional peaking plant may be required for supply to meet demand over that period.</p>
-            <p>You can influence the amount of peaking plant by changing your choice level of 'storage, demand shifting &amp; interconnection' below right,or by reducing the amount of intermittent renewable generation, or by reducing the demand for electricity</p>
-          </div>
+<!--          <div id="balancing" class="column"> -->
+
+ <!--          <h2>Balancing electricity supply and demand</h2> -->
+ <!--           <p id='autobuild_text'><span id='pathway_balancing_ccgt'></span> GW of conventional gas electricity generation plant has been assumed to have been built by 2050, to cover the gap between average electricity demand and the amount of low carbon generation selected in this pathway.</p> -->
+<!--            <p>This tool does not model the hourly, daily or even seasonal operation of the electricity grid. It presents annual averages. Therefore it does not correctly represent the peaks and troughs of electricity demand.</p> -->
+<!--            <p>To go some way to addressing this flaw, the tool applies a simulated stress test to your pathway of five cold, almost windless, days. This is described in more detail <a href="/assets/onepage/49.pdf" target="_new">here</a>. In this case, the stress test implies that <span id='pathway_balancing_peaking'></span> GW of additional peaking plant may be required for supply to meet demand over that period.</p> -->
+<!--            <p>You can influence the amount of peaking plant by changing your choice level of 'storage, demand shifting &amp; interconnection' below right,or by reducing the amount of intermittent renewable generation, or by reducing the demand for electricity</p> -->
+<!--          </div> -->
+
           <div id="imports" class="column">
             <h2>Dependence on imported energy</h2>
             <p>The calculator assumes that any available biomass is preferred over fossil fuels and that domestically produced fuels are preferred over imports.It assumes that fossil fuels are imported to cover any shortfall.</p>
             <table id="imports">
-              <tr><th class="description"></th><th colspan="2" class="year">2007</th><th></th><th colspan="2" class="year">2050</th></tr>
+              <tr><th class="description"></th><th colspan="2" class="year">2010</th><th></th><th colspan="2" class="year">2050</th></tr>
               <tr><th class="description">Imports</th><th class="value">TWh/yr</th><th class="value">%</th><th></th><th class="value">TWh/yr</th><th class="value">%</th></tr>
             </table>
           </div>
@@ -242,7 +245,7 @@
             <p>There may be a benefit from maintaining a diversity of energy sources:</p>
             <table id="diversity">
               <tbody>
-              <tr><th class="description">Proportion of energy supply</th><th class="year">2007</th><th></th><th class="year">2050</th></tr>
+              <tr><th class="description">Proportion of energy supply</th><th class="year">2010</th><th></th><th class="year">2050</th></tr>
               </tbody>
             </table>
           </div>

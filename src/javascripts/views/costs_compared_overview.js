@@ -143,7 +143,7 @@ window.twentyfifty.views.costs_compared_overview = function() {
       }
       this.boxes[code] = b;
     }
-    this.r.text(this.x(0), this.h - 5, "The absolute cost to society of the whole energy system (mean undiscounted real pounds per person per year 2010-2050)").attr({
+    this.r.text(this.x(0), this.h - 5, "The absolute cost to society of the whole energy system (mean undiscounted real dollars per person per year 2010-2050)").attr({
       'text-anchor': 'start',
     'font-weight': 'bold',
     'fill': '#008000'

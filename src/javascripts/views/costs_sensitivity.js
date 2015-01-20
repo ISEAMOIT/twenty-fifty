@@ -5,58 +5,59 @@ window.twentyfifty.views.costs_sensitivity = function() {
 
     bottom_area_start = 219;
 
-    cost_component_names = ["Conventional thermal plant", "Combustion + CCS", "Nuclear power", "Onshore wind", "Offshore wind", "Hydroelectric", "Wave and Tidal", "Geothermal", "Distributed solar PV", "Distributed solar thermal", "Micro wind", "Biomatter to fuel conversion", "Bioenergy imports", "Agriculture and land use", "Energy from waste", "Waste arising", "Marine algae", "Electricity imports", "Electricity Exports", "Electricity grid distribution", "Storage, demand shifting, backup", "H2 Production", "Domestic heating", "Domestic insulation", "Commercial heating and cooling", "Domestic lighting, appliances, and cooking", "Commercial lighting, appliances, and catering", "Industrial processes", "Conventional cars and buses", "Hybrid cars and buses", "Electric cars and buses", "Fuel cell cars and buses", "Bikes", "Rail", "Domestic aviation", "Domestic freight", "International aviation", "International shipping (maritime bunkers)", "Geosequestration", "Petroleum refineries", "Fossil fuel transfers", "District heating effective demand", "Storage of captured CO2", "Coal", "Oil", "Gas", "Finance cost"];
+    cost_component_names = ["Gas power stations", "Coal power stations", "Carbon Capture Storage (CCS)", "Oil power stations", "Electricity Balancing Requirement", "Nuclear Power", "Onshore wind", "Offshore wind","Nearshore wind","Small hydro","Solar CSP","Geothermal electricity","Tidal","Bioenergy power","Hydro power generation","Distributed solar PV","Agriculture and land use","Energy from waste","Waste arising","Biomatter to fuel conversion","Electricity import","Electricity export","Electricity grid distribution", "Pump storage hydro", "Domestic hotwater", "Commercial cooling","Domestic lighting","Domestic appliances and others","Commercial lighting","Commercial appliances, catering and others","Public lighting","Domestic cooking","Industrial processes","Domestic passenger transport-Internal combusion","Domestic passenger transport-Hybrid","Domestic passenger transport-Electric vehicle","Domestic passenger transport-Water","Domestic passenger transport-Rail","Domestic passenger transport-Air","Fishing","Irrigation and others","Petroleum refineries","Fossil fuel transfers", "Coal","Oil","Gas","Finance cost"];
 
-    cost_wiki_links = {
-      "Fuel cell cars and buses": '/pages/63',
-      "Conventional cars and buses": '/pages/63',
-      "Hybrid cars and buses": '/pages/63',
-      "Gas": '/pages/13',
-      "Electric cars and buses": '/pages/63',
-      "Domestic insulation": '/pages/31',
-      "Wave and Tidal": '/pages/38',
-      "Finance cost": '/pages/28',
-      "Industrial processes": '/pages/24',
-      "Domestic heating": '/pages/31',
-      "Offshore wind": '/pages/6',
-      "Commercial heating and cooling": '/pages/44',
-      "Oil": '/pages/13',
-      "Conventional thermal plant": '/pages/42',
-      "Distributed solar PV": '/pages/40',
-      "Nuclear power": '/pages/7',
-      "Bioenergy imports": '/pages/3',
-      "Agriculture and land use": '/pages/19',
-      "Carbon Storage": '/pages/36',
-      "Fossil fuel transfers": '/pages/12',
-      "H2 Production": '/pages/43',
-      "Combustion + CCS": '/pages/8',
-      "Storage of captured CO2": '/pages/36',
-      "Biomatter to fuel conversion": '/pages/26',
-      "Electricity grid distribution": '/pages/11',
-      "Storage, demand shifting, backup": '/pages/10',
-      "Onshore wind": '/pages/5',
-      "Electricity Exports": '/pages/32',
-      "Energy from waste": '/pages/19',
-      "Waste arising": '/pages/27',
-      "Distributed solar thermal": '/pages/31',
-      "Domestic freight": '/pages/64',
-      "Coal": '/pages/13',
-      "Geothermal": '/pages/39',
-      "Micro wind": '/pages/56',
-      "District heating effective demand": '/pages/30',
-      "Commercial lighting, appliances, and catering": '/pages/23',
-      "Marine algae": '/pages/17',
-      "Rail": '/pages/63',
-      "Hydroelectric": '/pages/9',
-      "Domestic aviation": '/pages/63',
-      "Domestic lighting, appliances, and cooking": '/pages/46',
-      "Geosequestration": '/pages/29',
-      "Petroleum refineries": '/pages/25',
-      "International shipping (maritime bunkers)": '/pages/71',
-      "International aviation": '/pages/70',
-      "Bikes": '/pages/63',
-      "Electricity imports": '/pages/32'
-    };
+
+//    cost_wiki_links = {
+ //     "Fuel cell cars and buses": '/pages/63',
+ //     "Conventional cars and buses": '/pages/63',
+ //   "Hybrid cars and buses": '/pages/63',
+ //     "Gas": '/pages/13',
+ //     "Electric cars and buses": '/pages/63',
+ //     "Domestic insulation": '/pages/31',
+ //     "Wave and Tidal": '/pages/38',
+ //     "Finance cost": '/pages/28',
+ //     "Industrial processes": '/pages/24',
+ //     "Domestic heating": '/pages/31',
+ //     "Offshore wind": '/pages/6',
+ //     "Commercial heating and cooling": '/pages/44',
+ //     "Oil": '/pages/13',
+ //     "Conventional thermal plant": '/pages/42',
+ //     "Distributed solar PV": '/pages/40',
+ //     "Nuclear power": '/pages/7',
+ //     "Bioenergy imports": '/pages/3',
+ //     "Agriculture and land use": '/pages/19',
+ //     "Carbon Storage": '/pages/36',
+ //     "Fossil fuel transfers": '/pages/12',
+ //     "H2 Production": '/pages/43',
+ //     "Combustion + CCS": '/pages/8',
+ //     "Storage of captured CO2": '/pages/36',
+ //     "Biomatter to fuel conversion": '/pages/26',
+ //     "Electricity grid distribution": '/pages/11',
+ //     "Storage, demand shifting, backup": '/pages/10',
+ //     "Onshore wind": '/pages/5',
+ //     "Electricity Exports": '/pages/32',
+ //     "Energy from waste": '/pages/19',
+ //     "Waste arising": '/pages/27',
+ //     "Distributed solar thermal": '/pages/31',
+ //     "Domestic freight": '/pages/64',
+ //     "Coal": '/pages/13',
+ //     "Geothermal": '/pages/39',
+ //     "Micro wind": '/pages/56',
+ //     "District heating effective demand": '/pages/30',
+ //     "Commercial lighting, appliances, and catering": '/pages/23',
+ //     "Marine algae": '/pages/17',
+ //     "Rail": '/pages/63',
+ //     "Hydroelectric": '/pages/9',
+ //     "Domestic aviation": '/pages/63',
+ //     "Domestic lighting, appliances, and cooking": '/pages/46',
+ //     "Geosequestration": '/pages/29',
+ //     "Petroleum refineries": '/pages/25',
+ //     "International shipping (maritime bunkers)": '/pages/71',
+ //     "International aviation": '/pages/70',
+ //     "Bikes": '/pages/63',
+ //     "Electricity imports": '/pages/32'
+ //   };
 
     cost_component_values = {
       "Oil": {
@@ -393,7 +394,7 @@ window.twentyfifty.views.costs_sensitivity = function() {
       r = new Raphael('costssensitivity', w, h);
       this.x = x = d3.scale.linear().domain([0, 10000]).range([250, w - 30]).nice();
       this.top_y = y = d3.scale.ordinal().domain(['p', 'i', 'c']).rangeRoundBands([30, 180], 0.15);
-      r.text(x(5000), 17, "The mean cost to society of the whole energy system in undiscounted real pounds per person 2010-2050").attr({
+      r.text(x(5000), 17, "The mean cost to society of the whole energy system in undiscounted real dollar per person 2010-2050").attr({
         'text-anchor': 'center',
         'font-weight': 'bold'
       });

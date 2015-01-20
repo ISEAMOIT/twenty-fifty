@@ -1,7 +1,7 @@
 window.twentyfifty.views.sankey = function() {
 
     name_conversions = {
-      "UK land based bioenergy": "Forests & biocrops",
+      "VN land based bioenergy": "Forests & biocrops",
       "Bio-conversion": "Biomass processing",
       "H2 conversion": "Hydrogen production",
       "H2": "Hydrogen",
@@ -59,18 +59,18 @@ window.twentyfifty.views.sankey = function() {
     this.setup = function() {
       $('#results').append("<div id='sankey'></div>");
       this.s = s = new Sankey();
-      s.stack(0, ["Pumped heat", "Solar", "Wind", "Tidal", "Wave", "Geothermal", "Hydro", "Electricity imports", "Nuclear", "Coal reserves", "Coal imports", "Biomass imports", "Gas reserves", "Gas imports", "Oil reserves", "Oil imports", "Biofuel imports", "UK land based bioenergy", "Agricultural 'waste'", "Other waste", "Marine algae"]);
+      s.stack(0, ["Pumped heat", "Solar", "Wind", "Tidal", "Wave", "Geothermal", "Hydro", "Electricity imports", "Nuclear", "Coal reserves", "Coal imports", "Biomass imports", "Gas reserves", "Gas imports", "Oil reserves", "Oil imports", "Biofuel imports", "VN land based bioenergy", "Agricultural 'waste'", "Other waste", "Marine algae"]);
       s.stack(1, ["Coal"], "Coal reserves");
       s.stack(1, ["Natural Gas"], "Gas reserves");
       s.stack(1, ["Oil"], "Oil reserves");
-      s.stack(1, ["Bio-conversion"], "UK land based bioenergy");
+      s.stack(1, ["Bio-conversion"], "VN land based bioenergy");
       s.stack(2, ["Solar Thermal", "Solar PV"], "Solar");
       s.stack(2, ["Solid", "Gas", "Liquid"], "Coal");
       s.stack(3, ["Thermal generation", "CHP"], "Nuclear");
       s.stack(4, ["Electricity grid", "District heating"], "Wind");
       s.stack(5, ["H2 conversion"], "Electricity grid");
       s.stack(6, ["H2"], "H2 conversion");
-      s.stack(7, ["Heating and cooling - homes", "Heating and cooling - commercial", "Lighting & appliances - homes", "Lighting & appliances - commercial", "Industry", "Road transport", "Rail transport", "Domestic aviation", "International aviation", "National navigation", "International shipping", "Agriculture", "Geosequestration", "Over generation / exports", "Losses"]);
+      s.stack(7, ["Heating and cooling - homes", "Heating and cooling - commercial", "Lighting & appliances - homes", "Lighting & appliances - commercial", "Industry", "Road transport", "Rail transport", "Aviation", "Water transport", "Agriculture", "Geosequestration", "Over generation / exports", "Losses"]);
 
       s.nudge_boxes_callback = function() {
         this.boxes["Losses"].y = this.boxes["Marine algae"].b() - this.boxes["Losses"].size();
@@ -89,7 +89,7 @@ window.twentyfifty.views.sankey = function() {
         "Solar": "#F6FF00",
         "Solar Thermal": "#F6FF00",
         "Solar PV": "#F6FF00",
-        "UK land based bioenergy": "#30FF00",
+        "VN land based bioenergy": "#30FF00",
         "Bio-conversion": "#30FF00",
         "Marine algae": "#30FF00",
         "Agricultural 'waste'": "#30FF00",

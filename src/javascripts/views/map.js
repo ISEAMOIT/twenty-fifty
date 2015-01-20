@@ -60,12 +60,21 @@ window.twentyfifty.views.map = function() {
   displayin_element = 'map';
   display_width = 1200;
   display_height = 800;
-  mapimage_url = '/assets/images/uk.png';
-  map_width = 492;
-  map_height = 725;
+
+  mapimage_url = '/assets/images/vn.png';
+//  mapimage_url = '/assets/images/vn.gif';
+
+//  map_width = 461;
+//  map_height = 679;
+
+  map_width = 395;
+  map_height = 600;
+
+
   map_offset_x = 150;
   map_offset_y = 0;
-  km = 0.69;
+// km = 0.57;   
+  km = 0.473; 
   m = km / 1000.0;
   m2 = m * m;
   ha = 10000 * m2;
@@ -75,56 +84,69 @@ window.twentyfifty.views.map = function() {
   MW = GW / 1000;
 
   colours = {
-    'III.a.2': '#ff0000',
-    'III.a.1': '#ff0000',
-    'IV.c': '#aa0000',
-    'VI.a.Biocrop': '#00ff00',
-    'VI.a.Forestry': '#408000',
-    'VI.c': '#00ff00',
-    'V.b': '#00ff00',
-    'IV.a': '#ffff00',
-    'IV.b': '#cccc00',
-    'VII.a': '#ffff00',
-    'III.b': '#0000ff',
-    'III.c.TidalRange': '#0000ff',
-    'III.c.TidalStream': '#aaaaff',
     'I.a': '#666',
     'I.b': '#CCC',
+    'I.c': '#CCC',	
+    'I.d': '#CCC',
+    'I.e': '#CCC',		
     'II.a': '#FF0',
-    'III.d': '#F00',
-    'VII.c': '#008000',
-    'VI.b': '#F00'
+    'IV.a': '#ffff00',
+    'III.a.1': '#ff0000',
+    'III.a.2': '#ff0000',
+    'III.a.3': '#ff0000',
+    'III.b': '#0000ff',
+    'III.c': '#0000ff',
+    'VI.a.Biocrop': '#00ff00',
+    'VI.a.Forestry': '#408000',    
+    'V.a': '#00ff00',
+    'III.d': '#0000ff',
+    'III.e': '#0000ff',    
+    'III.f.biomass': '#00ff00',
+    'III.f.biogas': '#00ff00',
+    'III.f.landfill': '#00ff00',
+    'III.f.incineration': '#00ff00',
+    'VIII.c': '#00ff00'               
   };
 
   labels = {
-    'III.a.2': 'Offshore wind',
-    'III.a.1': 'Onshore wind',
-    'IV.c': 'Micro wind',
-    'VI.a.Biocrop': 'Energy crops',
-    'VI.a.Forestry': 'Forest',
-    'VI.c': 'Marine algae',
-    'V.b': 'Biocrops',
-    'IV.a': 'Solar PV',
-    'IV.b': 'Solar thermal',
-    'VII.a': 'Solar PV',
-    'III.b': 'Hydro',
-    'III.c.TidalRange': 'Tidal range',
-    'III.c.TidalStream': 'Tidal stream',
-    'I.a': '2 GW coal gas or biomass power stations without CCS',
-    'I.b': '1.2 GW coal gas or biomass power stations with CCS',
-    'II.a': '3 GW nuclear power station',
-    'III.d': '0.01 GW geothermal stations',
-    'VII.c': '1 GW gas standby power stations',
-    'VI.b': '215 kt/y waste to energy conversion facilities'
+    'I.a': 'Nr of 0.75 GW gas power stations',
+    'I.b': 'Nr of 0.6 GW coal power stations',
+    'I.c': 'Nr of 0.6 CCS power stations',	
+    'I.d': 'Nr of 0.6 GW oil power stations',
+    'I.e': 'Nr of 0.6 GW coal balancing stations',		
+    'II.a': 'Nr of 1 GW nuclear power station',
+    'IV.a': 'Large hydro landtake',
+    'III.a.1': 'Onshore wind if 32.6 W/m2',
+    'III.a.2': 'Offshore wind if 228.2 W/m2',
+    'III.a.3': 'Nearshore wind if 228.2 W/m2',
+    'III.b': 'Small hydro reservoir',
+    'III.c': '0.01 GW solar CSP',
+    'VI.a.Biocrop': 'Area of biocrop',
+    'VI.a.Forestry': 'Area of forest',    
+    'V.a': 'Solar PV if 50 MW/km2',
+    'III.d': '0.02 GW geothermal power station',
+    'III.e': '0.005 GW tidal power station',    
+    'III.f.biomass': 'Nr. of 0.01 GW biomass power station',
+    'III.f.biogas': 'Nr. of 0.005 GW biogas power station',
+    'III.f.landfill': 'Nr. of 0.005 GW landfill power station',
+    'III.f.incineration': 'Nr. of 0.005 GW waste incineration power station',
+    'VIII.c': 'Nr of 0.3 GW PSP'               
   };
 
   pointSizes = {
     'I.a': 2,
-    'I.b': 1.2,
-    'II.a': 3,
-    'III.d': 0.01,
-    'VII.c': 1,
-    'VI.b': 0.01
+    'I.b': 2,
+    'I.c': 2,
+    'I.d': 2,
+    'I.e': 2,
+    'II.a': 2,	
+    'III.d': 2,
+    'III.e': 2,
+    'III.f.biomass': 2,	
+    'III.f.biogas': 2,	
+    'III.f.landfill': 2,	
+    'III.f.incineration': 2,
+    'VIII.c': 2		
   };
 
   // This is called first, before the data is ready
@@ -152,7 +174,7 @@ window.twentyfifty.views.map = function() {
     x = (map_width / 2) + map_offset_x;
     y = map_height + map_offset_y - 100;
     this.land_boxes = {};
-    land_box_names = ['III.a.1', 'III.b', 'IV.a', 'IV.b', 'IV.c', 'VI.a.Biocrop', 'VI.a.Forestry'];
+    land_box_names = ['IV.a', 'III.a.1', 'III.b', 'III.c', 'V.a', 'VI.a.Biocrop', 'VI.a.Forestry'];
     for (i = 0, len = land_box_names.length; i < len; i++) {
       name = land_box_names[i];
       this.land_boxes[name] = r.upiabeled_square(x, y, labels[name], 0, colours[name]);
@@ -162,7 +184,7 @@ window.twentyfifty.views.map = function() {
     x = (map_width / 2) + map_offset_x + 250;
     y = 30;
     this.sea_boxes = {};
-    sea_box_names = ['III.a.2', 'III.c.TidalStream', 'III.c.TidalRange', 'VI.c'];
+    sea_box_names = ['III.a.2', 'III.a.3'];
     for (i = 0, len = sea_box_names.length; i < len; i++) {
       name = sea_box_names[i];
       this.sea_boxes[name] = r.downiabeled_square(x, y, labels[name], 0, colours[name]);
@@ -173,14 +195,15 @@ window.twentyfifty.views.map = function() {
     r.text(44, 510, "Imports").attr({ 'fill': '#ccc', 'font-weight': 'bold', 'text-anchor': 'start' });
     
     // Now draw the land area overseas boxes, starting map bottom-left
-    x = map_offset_x - 105;
-    y = map_height + map_offset_y - 30;
-    this.overseasiand_boxes = {};
-    overseasiand_box_names = ['V.b', 'VII.a'];
-    for (i = 0, len = overseasiand_box_names.length; i < len; i++) {
-      name = overseasiand_box_names[i];
-      this.overseasiand_boxes[name] = r.upiabeled_square(x, y, labels[name], 0, colours[name]);
-    }
+   
+   // x = map_offset_x - 105;
+   // y = map_height + map_offset_y - 30;
+   // this.overseasiand_boxes = {};
+   // overseasiand_box_names = ['V.b', 'VII.a'];
+   // for (i = 0, len = overseasiand_box_names.length; i < len; i++) {
+   //   name = overseasiand_box_names[i];
+   //   this.overseasiand_boxes[name] = r.upiabeled_square(x, y, labels[name], 0, colours[name]);
+   // }
 
     // Now deal with the objects that aren't on the map. In this case a stack of circles
     this.points = r.set();
@@ -236,12 +259,12 @@ window.twentyfifty.views.map = function() {
     });
 
     // Draw the line for wave machines
-    if (map['III.c.Wave'] > 0) {
-      this.wave.label.show();
-    } else {
-      this.wave.label.hide();
-    };
-    this.wave.line.attr({ path: ["M", 100, 30, "l", 0, map['III.c.Wave'] * km] });
+//    if (map['III.c.Wave'] > 0) {
+//      this.wave.label.show();
+//    } else {
+//      this.wave.label.hide();
+//    };
+//    this.wave.line.attr({ path: ["M", 100, 30, "l", 0, map['III.c.Wave'] * km] });
 
     // Now draw the land boxes in the right spot
     y = map_height + map_offset_y - 100;
@@ -321,7 +344,7 @@ window.twentyfifty.views.map = function() {
     x = 1055;
     values = [];
 
-    point_cluster_names = ['I.a', 'I.b', 'II.a', 'III.d', 'VII.c', 'VI.b'];
+    point_cluster_names = ['I.a', 'I.b', 'I.c', 'I.d','I.e', 'II.a', 'III.d', 'III.e', 'III.f.biomass', 'III.f.biogas','III.f.landfill', 'III.f.incineration', 'VIII.c'];
     for (i = 0, len = point_cluster_names.length; i < len; i++) {
       name = point_cluster_names[i];
       values.push({ name: name, value: map[name] });
@@ -331,7 +354,7 @@ window.twentyfifty.views.map = function() {
     for (i = 0, len = values.length; i < len; i++) {
       value = values[i];
       if (value.value >= 1) {
-        size = Math.round(Math.sqrt(pointSizes[value.name]) * 10);
+        size = Math.round(Math.sqrt(pointSizes[value.name]) * 1.5);
         y = this.point_stack(x, y, value.value, colours[value.name], "" + (Math.round(value.value)) + " x " + labels[value.name], size);
       }
     }
