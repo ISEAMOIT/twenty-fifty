@@ -1,63 +1,67 @@
 window.twentyfifty.views.costs_sensitivity = function() {
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
-    costsSensitivityHTML = "<div class='costssensitivity'>\n  <ul id='comparatorchoice'>\n    <li>\n      <a href=\"#\" onclick=\"$('ul#view_comparatorchoice').toggle(); return false;\">Choose comparison<img alt=\"Dropdown-arrow\" src=\"/assets/images/dropdown-arrow.png\" /></a>\n      <ul class='choices' id='view_comparatorchoice'>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('10111111111111110111111001111110111101101101110110111');$('ul#view_comparatorchoice').toggle(); return false;\">Doesn't tackle climate change (All level 1)</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('10111111111111110111111004444440444404203304440420111');$('ul#view_comparatorchoice').toggle(); return false;\">Maximum demand</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('40444444444444440443444001111110111101101101110110111');$('ul#view_comparatorchoice').toggle(); return false;\">Maximum supply</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('i0g2dd2pp1121f1i032211p004314110433304202304320420121');$('ul#view_comparatorchoice').toggle(); return false;\">Analogous to Markal 3.26</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('e0d3jrg221ci12110222112004423220444404202304440420141');$('ul#view_comparatorchoice').toggle(); return false;\">Higher renewables, more energy efficiency</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('r013ce1111111111042233B002322220233302202102330220121');$('ul#view_comparatorchoice').toggle(); return false;\">Higher nuclear, less energy efficiency</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('f023df111111111f0322123003223220333203102303430310221');$('ul#view_comparatorchoice').toggle(); return false;\">Higher CCS, more bioenergy</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('10h4nn4431w23y110243111004424440343304202304430420441');$('ul#view_comparatorchoice').toggle(); return false;\">Friends of the Earth</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('10h2pdppp12332130233122004414430343304102304430410231');$('ul#view_comparatorchoice').toggle(); return false;\">Campaign to Protect Rural England</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('20222144411341110343321003422440423404203203340420141');$('ul#view_comparatorchoice').toggle(); return false;\">Mark Brinkley</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('h0h2gg1211cj1j110322222003313230234102102203440320121');$('ul#view_comparatorchoice').toggle(); return false;\">National Grid</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('g0f2oj11t1rgqj1j0343111003324240244104201304430420231');$('ul#view_comparatorchoice').toggle(); return false;\">Atkins</a></li>\n      </ul>\n    </li>\n  </ul>\n  <h1>The cost of your pathway compared with another, allowing simple variation in cost estimates.</h1>\n  <div id='costssensitivity'></div>\n  " + window.costEssentialNotesHTML + "\n</div>";
+    costsSensitivityHTML = "<div class='costssensitivity'>\n  <ul id='comparatorchoice'>\n    <li>\n      <a href=\"#\" onclick=\"$('ul#view_comparatorchoice').toggle(); return false;\">Choose comparison<img alt=\"Dropdown-arrow\" src=\"/assets/images/dropdown-arrow.png\" /></a>\n      <ul class='choices' id='view_comparatorchoice'>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('11111111111111111111111111111111111111111111');$('ul#view_comparatorchoice').toggle(); return false;\">All at level 1</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('12222222222212222211221222212222122222222122');$('ul#view_comparatorchoice').toggle(); return false;\">All at level 2</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('13333333333313333311331333313333133333333133');$('ul#view_comparatorchoice').toggle(); return false;\">All at level 3</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('14434434434314444411441444414444134444444143');$('ul#view_comparatorchoice').toggle(); return false;\">All at level 4</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('14422222222212222211221222212222122222222122');$('ul#view_comparatorchoice').toggle(); return false;\">Advanced coal power technology</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('12222222222212222211441444414444134444444122');$('ul#view_comparatorchoice').toggle(); return false;\">High energy efficiency</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('12222222222212222211441442212222122222222122');$('ul#view_comparatorchoice').toggle(); return false;\">Maximum effort from transport</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('12224434434314444211221222212222122222222122');$('ul#view_comparatorchoice').toggle(); return false;\">Maximum renewable energy</a></li>\n  </ul>\n    </li>\n  </ul>\n  <h1>The cost of your pathway compared with another, allowing simple variation in cost estimates.</h1>\n  <div id='costssensitivity'></div>\n  " + window.costEssentialNotesHTML + "\n</div>";
 
     bottom_area_start = 219;
 
-    cost_component_names = ["Gas power stations", "Coal power stations", "Carbon Capture Storage (CCS)", "Oil power stations", "Electricity Balancing Requirement", "Nuclear Power", "Onshore wind", "Offshore wind","Nearshore wind","Small hydro","Solar CSP","Geothermal electricity","Tidal","Bioenergy power","Hydro power generation","Distributed solar PV","Agriculture and land use","Energy from waste","Waste arising","Biomatter to fuel conversion","Electricity import","Electricity export","Electricity grid distribution", "Pump storage hydro", "Domestic hotwater", "Commercial cooling","Domestic lighting","Domestic appliances and others","Commercial lighting","Commercial appliances, catering and others","Public lighting","Domestic cooking","Industrial processes","Domestic passenger transport-Internal combusion","Domestic passenger transport-Hybrid","Domestic passenger transport-Electric vehicle","Domestic passenger transport-Water","Domestic passenger transport-Rail","Domestic passenger transport-Air","Fishing","Irrigation and others","Petroleum refineries","Fossil fuel transfers", "Coal","Oil","Gas","Finance cost"];
+    cost_component_names = ["Gas power stations", "Coal power stations", "Carbon Capture Storage (CCS)", "Oil power stations", "Electricity Balancing Requirement", "Nuclear Power", "Onshore wind", "Offshore wind","Nearshore wind","Small hydro","Solar CSP","Geothermal electricity","Tidal","Bioenergy power","Hydro power generation","Distributed solar PV","Agriculture and land use","Energy from waste","Waste arising","Biomatter to fuel conversion","Electricity import","Electricity export","Electricity grid distribution", "Pump storage hydro", "Domestic hotwater", "Commercial cooling","Domestic lighting","Domestic appliances and others","Commercial lighting","Commercial appliances, catering and others","Public lighting","Domestic cooking","Industrial processes","Domestic passenger transport-Internal combusion","Domestic passenger transport-Hybrid","Domestic passenger transport-Electric vehicle","Domestic passenger transport-Water","Domestic passenger transport-Rail","Domestic passenger transport-Air","Domestic freight-LCV","Domestic freight-HCV","Domestic freight-Water","Domestic freight-Rail","Domestic freight-Air","Fishing","Irrigation and others","Petroleum refineries","Fossil fuel transfers", "Coal","Oil","Gas","Finance cost"];
 
 
-//    cost_wiki_links = {
- //     "Fuel cell cars and buses": '/pages/63',
- //     "Conventional cars and buses": '/pages/63',
- //   "Hybrid cars and buses": '/pages/63',
- //     "Gas": '/pages/13',
- //     "Electric cars and buses": '/pages/63',
- //     "Domestic insulation": '/pages/31',
- //     "Wave and Tidal": '/pages/38',
- //     "Finance cost": '/pages/28',
- //     "Industrial processes": '/pages/24',
- //     "Domestic heating": '/pages/31',
- //     "Offshore wind": '/pages/6',
- //     "Commercial heating and cooling": '/pages/44',
- //     "Oil": '/pages/13',
- //     "Conventional thermal plant": '/pages/42',
- //     "Distributed solar PV": '/pages/40',
- //     "Nuclear power": '/pages/7',
- //     "Bioenergy imports": '/pages/3',
- //     "Agriculture and land use": '/pages/19',
- //     "Carbon Storage": '/pages/36',
- //     "Fossil fuel transfers": '/pages/12',
- //     "H2 Production": '/pages/43',
- //     "Combustion + CCS": '/pages/8',
- //     "Storage of captured CO2": '/pages/36',
- //     "Biomatter to fuel conversion": '/pages/26',
- //     "Electricity grid distribution": '/pages/11',
- //     "Storage, demand shifting, backup": '/pages/10',
- //     "Onshore wind": '/pages/5',
- //     "Electricity Exports": '/pages/32',
- //     "Energy from waste": '/pages/19',
- //     "Waste arising": '/pages/27',
- //     "Distributed solar thermal": '/pages/31',
- //     "Domestic freight": '/pages/64',
- //     "Coal": '/pages/13',
- //     "Geothermal": '/pages/39',
- //     "Micro wind": '/pages/56',
- //     "District heating effective demand": '/pages/30',
- //     "Commercial lighting, appliances, and catering": '/pages/23',
- //     "Marine algae": '/pages/17',
- //     "Rail": '/pages/63',
- //     "Hydroelectric": '/pages/9',
- //     "Domestic aviation": '/pages/63',
- //     "Domestic lighting, appliances, and cooking": '/pages/46',
- //     "Geosequestration": '/pages/29',
- //     "Petroleum refineries": '/pages/25',
- //     "International shipping (maritime bunkers)": '/pages/71',
- //     "International aviation": '/pages/70',
- //     "Bikes": '/pages/63',
- //     "Electricity imports": '/pages/32'
- //   };
+    cost_wiki_links = {
+     
+"Gas power stations": '/pages/63',
+"Coal power stations": '/pages/63',
+"Carbon Capture Storage (CCS)": '/pages/63',
+"Oil power stations": '/pages/63',
+"Electricity Balancing Requirement": '/pages/63',
+"Nuclear Power": '/pages/63',
+"Onshore wind": '/pages/63',
+"Offshore wind": '/pages/63',
+"Nearshore wind": '/pages/63',
+"Small hydro": '/pages/63',
+"Solar CSP": '/pages/63',
+"Geothermal electricity": '/pages/63',
+"Tidal": '/pages/63',
+"Bioenergy power": '/pages/63',
+"Hydro power generation": '/pages/63',
+"Distributed solar PV": '/pages/63',
+"Agriculture and land use": '/pages/63',
+"Energy from waste": '/pages/63',
+"Waste arising": '/pages/63',
+"Biomatter to fuel conversion": '/pages/63',
+"Electricity import": '/pages/63',
+"Electricity export": '/pages/63',
+"Electricity grid distribution": '/pages/63',
+"Pump storage hydro": '/pages/63',
+"Domestic hotwater": '/pages/63',
+"Commercial cooling": '/pages/63',
+"Domestic lighting":'/pages/63',
+"Domestic appliances and others":'/pages/63',
+"Commercial lighting":'/pages/63',
+"Commercial appliances, catering and others": '/pages/63',
+"Public lighting":'/pages/63',
+"Domestic cooking":'/pages/63',
+"Industrial processes":'/pages/63',
+"Domestic passenger transport-Internal combusion":'/pages/63',
+"Domestic passenger transport-Hybrid": '/pages/63',
+"Domestic passenger transport-Electric vehicle": '/pages/63',
+"Domestic passenger transport-Water": '/pages/63',
+"Domestic passenger transport-Rail": '/pages/63',
+"Domestic freight-LCV": '/pages/63',
+"Domestic freight-HCV": '/pages/63',
+"Domestic freight-Water": '/pages/63',
+"Domestic freight-Rail": '/pages/63',
+"Domestic freight-Air": '/pages/63',
+"Fishing": '/pages/63',
+"Irrigation and others":'/pages/63', 
+"Petroleum refineries": '/pages/63',
+"Fossil fuel transfers": '/pages/63',
+"Coal": '/pages/63',
+"Oil": '/pages/63',
+"Gas": '/pages/63',
+"Finance cost":'/pages/63'
+   };
 
     cost_component_values = {
       "Oil": {
@@ -77,8 +81,8 @@ window.twentyfifty.views.costs_sensitivity = function() {
       },
       "Finance cost": {
         cheap: "None",
-        "default": "7% real",
-        expensive: "10% real"
+        "default": "10% real",
+        expensive: "15% real"
       }
     };
 
