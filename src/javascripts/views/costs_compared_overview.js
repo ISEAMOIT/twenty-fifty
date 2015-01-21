@@ -3,7 +3,7 @@ window.twentyfifty.views.costs_compared_overview = function() {
 
   costsComparedOverviewHTML = "<div class='costscomparedoverview'>\n  <div id='cost_override_warning'>NB Some costs not on default values</div>\n  <h1>\n    The cost of your pathway, compared with other pathways.\n    This is not your energy bill.\n  </h1>\n  <div id='costscomparedoverview'></div>\n  " + window.costEssentialNotesHTML + "\n</div>";
 
-  categories = ["Fossil fuels", "Bioenergy", "Electricity", "Buildings", "Transport", "Industry", "Finance", "Other"];
+  categories = ["Fossil fuels", "Bioenergy", "Electricity", "Commerce", "Transport", "Industry", "Finance", "Agriculture", "Resident"];
 
   category_colors = {
     "Fossil fuels": {
@@ -18,7 +18,7 @@ window.twentyfifty.views.costs_compared_overview = function() {
       low: "#1f77b4",
       range: "url(/assets/images/hatches/hatch-1f77b4.png)"
     },
-    "Buildings": {
+    "Commerce": {
       low: "#ff7f0e",
       range: "url(/assets/images/hatches/hatch-ff7f0e.png)"
     },
@@ -33,8 +33,12 @@ window.twentyfifty.views.costs_compared_overview = function() {
     "Finance": {
       low: "#EA8BCC",
       range: "url(/assets/images/hatches/hatch-EA8BCC.png)"
-    },
-    "Other": {
+     },
+   "Agriculture": {
+      low: "#EA8BCC",
+      range: "url(/assets/images/hatches/hatch-EA8BCC.png)"
+     },
+    "Resident": {
       low: "#a55194",
       range: "url(/assets/images/hatches/hatch-a55194.png)"
     }

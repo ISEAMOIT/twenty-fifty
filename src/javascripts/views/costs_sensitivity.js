@@ -1,7 +1,7 @@
 window.twentyfifty.views.costs_sensitivity = function() {
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
-    costsSensitivityHTML = "<div class='costssensitivity'>\n  <ul id='comparatorchoice'>\n    <li>\n      <a href=\"#\" onclick=\"$('ul#view_comparatorchoice').toggle(); return false;\">Choose comparison<img alt=\"Dropdown-arrow\" src=\"/assets/images/dropdown-arrow.png\" /></a>\n      <ul class='choices' id='view_comparatorchoice'>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('11111111111111111111111111111111111111111111');$('ul#view_comparatorchoice').toggle(); return false;\">All at level 1</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('12222222222212222211221222212222122222222122');$('ul#view_comparatorchoice').toggle(); return false;\">All at level 2</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('13333333333313333311331333313333133333333133');$('ul#view_comparatorchoice').toggle(); return false;\">All at level 3</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('14434434434314444411441444414444134444444143');$('ul#view_comparatorchoice').toggle(); return false;\">All at level 4</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('14422222222212222211221222212222122222222122');$('ul#view_comparatorchoice').toggle(); return false;\">Advanced coal power technology</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('12222222222212222211441444414444134444444122');$('ul#view_comparatorchoice').toggle(); return false;\">High energy efficiency</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('12222222222212222211441442212222122222222122');$('ul#view_comparatorchoice').toggle(); return false;\">Maximum effort from transport</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('12224434434314444211221222212222122222222122');$('ul#view_comparatorchoice').toggle(); return false;\">Maximum renewable energy</a></li>\n  </ul>\n    </li>\n  </ul>\n  <h1>The cost of your pathway compared with another, allowing simple variation in cost estimates.</h1>\n  <div id='costssensitivity'></div>\n  " + window.costEssentialNotesHTML + "\n</div>";
+    costsSensitivityHTML = "<div class='costssensitivity'>\n  <ul id='comparatorchoice'>\n    <li>\n      <a href=\"#\" onclick=\"$('ul#view_comparatorchoice').toggle(); return false;\">Choose comparison<img alt=\"Dropdown-arrow\" src=\"/assets/images/dropdown-arrow.png\" /></a>\n      <ul class='choices' id='view_comparatorchoice'>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('11111111111111111111111111111111111111111111');$('ul#view_comparatorchoice').toggle(); return false;\">All at level 1</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('12222222222212222211221222212222122222222122');$('ul#view_comparatorchoice').toggle(); return false;\">All at level 2</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('13333333333313333311331333313333133333333133');$('ul#view_comparatorchoice').toggle(); return false;\">All at level 3</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('14434434434314444411441444414444134444444143');$('ul#view_comparatorchoice').toggle(); return false;\">All at level 4</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('04422222222202222200220222202222022222222022');$('ul#view_comparatorchoice').toggle(); return false;\">Advanced coal power technology</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('12222222222212222211441444414444134444444122');$('ul#view_comparatorchoice').toggle(); return false;\">High energy efficiency</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('02222222222202222200440442202222022222222022');$('ul#view_comparatorchoice').toggle(); return false;\">Maximum effort from transport</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('02222434434304444200220222202222022222222022');$('ul#view_comparatorchoice').toggle(); return false;\">Maximum renewable energy</a></li>\n  </ul>\n    </li>\n  </ul>\n  <h1>The cost of your pathway compared with another, allowing simple variation in cost estimates.</h1>\n  <div id='costssensitivity'></div>\n  " + window.costEssentialNotesHTML + "\n</div>";
 
     bottom_area_start = 219;
 
@@ -65,19 +65,19 @@ window.twentyfifty.views.costs_sensitivity = function() {
 
     cost_component_values = {
       "Oil": {
-        cheap: "$75/bbl",
-        "default": "$130/bbl",
-        expensive: "$170/bbl"
+        cheap: "$710/ton",
+        "default": "$750/ton",
+        expensive: "$810/ton"
       },
       "Coal": {
-        cheap: "$80/tCoal",
-        "default": "$110/tCoal",
-        expensive: "$155/tCoal"
+        cheap: "$52/tCoal",
+        "default": "$60/tCoal",
+        expensive: "$69/tCoal"
       },
       "Gas": {
-        cheap: "45p/therm",
-        "default": "70p/therm",
-        expensive: "100p/therm"
+        cheap: "$3/MBTU",
+        "default": "$4/MBTU",
+        expensive: "$5/MBTU"
       },
       "Finance cost": {
         cheap: "None",
