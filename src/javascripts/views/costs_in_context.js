@@ -131,7 +131,7 @@ window.twentyfifty.views.costs_in_context = function() {
       tick = _ref[_l];
       this.r.text(this.x(tick), this.h - 20, format(tick)).attr({ 'text-anchor': 'middle', fill: '#008000' });
     }
-    this.drawIndicator(3700, "Approximate energy system cost today");
+//    this.drawIndicator(3700, "Approximate energy system cost today");
     _results = [];
 
     that = this;
