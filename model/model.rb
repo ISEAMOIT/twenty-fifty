@@ -45,7 +45,7 @@ class Model
         end
       end 
       return a
-    when :ExcelError; [:value,:name,:div0,:ref,:na][excel_value[:number]]
+    when :ExcelError; [:value,:name,:div0,:ref,:na,:num][excel_value[:number]]
     else
       raise Exception.new("ExcelValue type #{excel_value[:type].inspect} not recognised")
     end
@@ -4513,6 +4513,101 @@ class Model
     attach_function 'intermediate_output_q39', [], ExcelValue.by_value
     attach_function 'intermediate_output_q43', [], ExcelValue.by_value
     attach_function 'intermediate_output_q46', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h463', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h464', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h465', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h466', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h467', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h468', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h469', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h470', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h471', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h472', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h473', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h474', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h475', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h476', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h477', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h478', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h479', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h480', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h481', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h482', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h483', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h484', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h485', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h486', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h487', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h488', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h489', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h490', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h491', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h492', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h493', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h494', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h495', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h496', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h497', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h498', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h499', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h500', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h501', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h502', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h503', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h504', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h505', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h506', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h507', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h508', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h509', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h510', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h511', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h512', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h513', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h514', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h515', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h516', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h517', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h518', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h519', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h520', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h521', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h522', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h523', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h524', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h525', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h526', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h527', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h528', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h529', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h530', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h531', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h532', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h533', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h534', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h535', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h536', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h537', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h538', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h539', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h540', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h541', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h542', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h543', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h544', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h545', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h546', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h547', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h548', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h549', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h550', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h551', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h552', [], ExcelValue.by_value
+    attach_function 'intermediate_output_h553', [], ExcelValue.by_value
+    attach_function 'intermediate_output_q249', [], ExcelValue.by_value
+    attach_function 'intermediate_output_q238', [], ExcelValue.by_value
+    attach_function 'intermediate_output_q227', [], ExcelValue.by_value
+    attach_function 'intermediate_output_q142', [], ExcelValue.by_value
     # end of Intermediate output
     # end of Land Use
     attach_function 'energy_d25', [], ExcelValue.by_value
@@ -4866,6 +4961,7 @@ class Model
     attach_function 'ghg_k15', [], ExcelValue.by_value
     attach_function 'ghg_l15', [], ExcelValue.by_value
     attach_function 'ghg_m15', [], ExcelValue.by_value
+    attach_function 'ghg_e21', [], ExcelValue.by_value
     # end of GHG
     attach_function 'electricity_d106', [], ExcelValue.by_value
     attach_function 'electricity_e106', [], ExcelValue.by_value
@@ -7007,6 +7103,7 @@ class Model
     attach_function 'output_finalenergydemand', [], ExcelValue.by_value
     attach_function 'output_flows', [], ExcelValue.by_value
     attach_function 'output_ghg_by_ipcc_sector', [], ExcelValue.by_value
+    attach_function 'output_ghg_percentage_reduction', [], ExcelValue.by_value
     attach_function 'output_imports_proportion', [], ExcelValue.by_value
     attach_function 'output_imports_quantity', [], ExcelValue.by_value
     attach_function 'output_primaryenergysupply', [], ExcelValue.by_value
@@ -7029,6 +7126,7 @@ class Model
     attach_function 'output_finalenergydemand', [], ExcelValue.by_value
     attach_function 'output_flows', [], ExcelValue.by_value
     attach_function 'output_ghg_by_ipcc_sector', [], ExcelValue.by_value
+    attach_function 'output_ghg_percentage_reduction', [], ExcelValue.by_value
     attach_function 'output_imports_proportion', [], ExcelValue.by_value
     attach_function 'output_imports_quantity', [], ExcelValue.by_value
     attach_function 'output_primaryenergysupply', [], ExcelValue.by_value

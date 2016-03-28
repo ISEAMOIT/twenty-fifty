@@ -2,7 +2,7 @@ window.twentyfifty.views.costs_in_context = function() {
   
   __hasProp = {}.hasOwnProperty;
 
-  costsInContextHTML = "<div class='costsincontext'>\n  <div id='cost_override_warning'>NB Some costs not on default values</div>\n  <h1>\n    The cost to society of your pathway. This is not your energy bill.<br>\n    For comparison, VN average GDP in 2050 is forecast to be roughly &dollar;9100 per person.\n  </h1>\n  <div id='costsincontext'></div>\n  " + window.costEssentialNotesHTML + "\n</div>";
+  costsInContextHTML = "<div class='costsincontext'>\n  <div id='cost_override_warning'>NB Some costs not on default values</div>\n  <h1>\n    Chi phí tới xã hội của kịch bản năng lượng của bạn. Đây không phải là chi phí cho sử dụng năng lượng của bạn.<br>\n    Để so sánh, GDP trung bình năm 2050 của Việt Nam được dự báo khoảng 9100 USD/người.\n  </h1>\n  <div id='costsincontext'></div>\n  " + window.costEssentialNotesHTML + "\n</div>";
 
   this.pathways = {};
 
@@ -34,12 +34,12 @@ window.twentyfifty.views.costs_in_context = function() {
       'stroke': 'none'
     });
 
-    this.r.text(30, this.y("chosen") + 9, "Your pathway").attr({
+    this.r.text(30, this.y("chosen") + 9, "Kịch bản của bạn").attr({
       'text-anchor': 'start',
       'font-weight': 'bold'
     });
 
-    this.r.text(30, this.y("chosen") + 27, "You can click on the chart to make a more\ndetailed comparison with the pathways below").attr({
+    this.r.text(30, this.y("chosen") + 27, "Nhấn vào biểu đồ để thực hiện so sánh chi tiết hơn\n với các kịch bản ở dưới").attr({
       'text-anchor': 'start'
     });
 
@@ -115,7 +115,7 @@ window.twentyfifty.views.costs_in_context = function() {
     'stroke': 'none'
     });
     overlays.insertAfter(this.incremental_overlay);
-    this.r.text(this.x(0), this.h - 5, "The absolute cost to society of the whole energy system (mean undiscounted real dollar per person per year 2010-2050)").attr({
+    this.r.text(this.x(0), this.h - 5, "Chi phí tuyệt đối tới xã hội của toàn bộ hệ thống năng lượng (trung bình theo giá đô la thực chưa chiết khấu và tính theo đầu người/năm giai đoạn 2010-2050)").attr({
       'text-anchor': 'start',
       'font-weight': 'bold',
       'fill': '#008000'
@@ -189,7 +189,7 @@ window.twentyfifty.views.costs_in_context = function() {
       });
     } else if (_id === (twentyfifty.getComparator() || twentyfifty.default_comparator_code)) {
       this.comparator = pathway;
-      this.r.text(this.x(total_cost), 10, "The extra cost to society above that of the '" + (twentyfifty.pathwayName(_id, "comparison")) + "' pathway (mean $/person/year 2010-2050)").attr({
+      this.r.text(this.x(total_cost), 10, "Chi phí tăng thêm đối với xã hội so với kịch bản '" + (twentyfifty.pathwayName(_id, "comparison")) + "' ($/người/năm 2010-2050)").attr({
         'text-anchor': 'start',
         'font-weight': 'bold',
         'fill': '#f00'

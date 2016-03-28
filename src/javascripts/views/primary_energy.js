@@ -2,6 +2,7 @@ window.twentyfifty.views.primary_energy_chart = function() {
 
   // This is called before the view is first selected
   // and produces the three empty charts
+ //.title("Final Energy Demand")
   this.setup = function() {
     $('.primary_energy_notes').show();
 
@@ -14,18 +15,18 @@ window.twentyfifty.views.primary_energy_chart = function() {
       .attr('class', 'chart');
 
     this.final_energy_chart = timeSeriesStackedAreaChart()
-      .title("Final Energy Demand")
-      .unit('TWh/yr')
+      .title("Nhu cầu năng lượng cuối cùng")
+      .unit('TWh/năm')
       .max_value(3500);
 
     this.primary_energy_chart = timeSeriesStackedAreaChart()
-      .title("Primary Energy Supply")
-      .unit('TWh/yr')
+      .title("Cung cấp năng lượng sơ cấp")
+      .unit('TWh/năm')
       .max_value(8000);
 
     this.emissions_chart = timeSeriesStackedAreaChart()
-      .title("Greenhouse Gas Emissions")
-      .unit('MtCO2e/yr')
+      .title("Phát thải khí nhà kính")
+      .unit('MtCO2e/năm')
       .min_value(-500)
       .max_value(2500);
   };
@@ -90,21 +91,21 @@ window.twentyfifty.views.primary_energy_chart = function() {
       .call(this.emissions_chart);
 
     // This is to add the target text to the chart
- //   t = d3.select('#emissions_chart g.drawing').selectAll('text.target')
- //     .data([percent*100]);
+    t = d3.select('#emissions_chart g.drawing').selectAll('text.target')
+      .data([percent*100]);
 
-//    t.enter().append('text')
-//      .attr('class', 'target');
+    t.enter().append('text')
+      .attr('class', 'target');
 
-//    t.attr('transform', 'translate(' + this.emissions_chart.x_center() + ',-18)');
+    t.attr('transform', 'translate(' + this.emissions_chart.x_center() + ',-18)');
 
-//    t.transition().tween('text', function(d) {
-//      current = parseInt(this.textContent) || +d;
-//      i = d3.interpolateRound(current, +d);
-//      return function(t) {
-//       return this.textContent = "" + (i(t)) + "% reduction 1990-2050; Target is 80%";
-//      };
-//    });
+    t.transition().tween('text', function(d) {
+      current = parseInt(this.textContent) || +d;
+      i = d3.interpolateRound(current, +d);
+      return function(t) {
+       return this.textContent = "" + (i(t)) + "% giảm giai đoạn 2010-2030";
+      };
+    });
 
     x = this.emissions_chart.xScale;
     y = this.emissions_chart.yScale;
@@ -128,7 +129,7 @@ window.twentyfifty.views.primary_energy_chart = function() {
       .attr('class', 'targetlabel');
 
     new_label.append('text')
-      .text("Baseline");
+      .text("Đường cơ sở");
 
     t.select('text')
       .attr('x', function(d,i) { return x(2022) })

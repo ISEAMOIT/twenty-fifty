@@ -2,7 +2,7 @@
   __hasProp = {}.hasOwnProperty;
 
   // FIXME: Move this to index.html
-  window.costEssentialNotesHTML = "<div id='essentialnotes'>\n  Note: The cost of failing to tackle climate change is not included. Some pathways, including the 'All at Level 1' pathway shown here, fail to tackle climate change. The Stern review estimated that failing to tackle climate change could reduce global GDP by up to 20% (equivalent to up to &pound;6500 per person per year on top of the cost of the energy system included in the chart above). Nor are the costs of travelling less, being colder, or consuming less included.\n  <a href=\"#\" onclick=\"$.jStorage.deleteKey('CostCaveatShown');$('#cost_caveats').show(); return false;\">Show the caveats again</a>\n</div>";
+  window.costEssentialNotesHTML = "<div id='essentialnotes'>\n  Ghi chú: Chi phí trên không bao gồm chi phí do không ứng phó được với biến đổi khí hậu. Một số kịch bản, bao gồm kịch bản 'Tất cả ở cấp độ 1' thể hiện ở đây, không đáp ứng được yêu cầu về ứng phó với biến đổi khí hậu. Nghiên cứu Stern ước tính biến đổi khí hậu có thể làm giảm tới 20% GDP toàn cầu (tương đương &pound;6500 trên đầu người trên năm thêm vào mức chi phí của hệ thống năng lượng thể hiện ở biểu đồ trên). Chi phí trên cũng không bao gồm chi phí do di lại ít đi, thời tiết lạnh hơn, hay tiêu dùng ít hơn.\n  <a href=\"#\" onclick=\"$.jStorage.deleteKey('CostCaveatShown');$('#cost_caveats').show(); return false;\">Show the caveats again</a>\n</div>";
 
   // FIXME: Move this to the spreadsheet
   cost_categories = {

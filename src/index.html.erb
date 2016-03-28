@@ -44,29 +44,30 @@
       </div>
 
       <div id='examples'>
-        <a class='newdropdown' data-dropdown='#savedpathway_choices' href='#'>Examples</a>
+        <a class='newdropdown' data-dropdown='#savedpathway_choices' href='#'>Các ví dụ</a>
         <!-- the contents of this dropdown is defined in the #savedpathway_choices div below -->
       </div>
 
       <!-- To add or remove views from the web tool, alter the following section -->
       <div id='views'>
-        <a class='view' data-view='primary_energy_chart' href='#'>Energy</a>
-        <a class='view' data-view='electricity' href='#'>Electricity</a>
-        <a class='view' data-view='energy_security' href='#'>Security</a>
-        <a class='view' data-view='sankey' href='#'>Flows</a>
-        <a class='view' data-view='map' href='#'>Map</a>
+        <a class='view' data-view='primary_energy_chart' href='#'>Năng lượng</a>
+        <a class='view' data-view='electricity' href='#'>Điện năng</a>
+        <a class='view' data-view='energy_security' href='#'>An ninh năng lượng</a>
+        <a class='view' data-view='sankey' href='#'>Dòng năng lượng</a>
+        <a class='view' data-view='map' href='#'>Bản đồ</a>
        <!-- <a class='view' data-view='story' href='#'>Story</a> -->
-        <a class='newdropdown' data-dropdown='#cost_choices' href='#' id='cost_choice'>Costs</a>
+        <!-- <a class='newdropdown' data-dropdown='#cost_choices' href='#' id='cost_choice'>Các chi phí</a> -->
+        <a class='newdropdown' data-dropdown='#cost_choices' href='#'>Các chi phí</a> 
         <!-- <a class='view' data-view='air_quality' href='#'>Air</a> -->
         <!-- <a class='view' data-view='share' href='#'>Share</a> -->
         <!-- Change this to link to your own country website documentation -->
-        <a href='http://Vietnamcalculator2050pathways.atmt.gov.vn'>Docs</a>
+        <a href='http://Vietnamcalculator2050pathways.atmt.gov.vn'>Tài liệu</a>
       </div>
     </div>
 
     <div class='dropdown' id='cost_choices'>
-      <a class='view' data-view='costs_in_context' href='#'>In context</a>
-      <a class='view' data-view='costs_compared_overview' href='#'>Compared</a>
+      <a class='view' data-view='costs_in_context' href='#'>Tổng</a>
+      <a class='view' data-view='costs_compared_overview' href='#'>Chi tiết</a>
  <!--     <a class='view' data-view='costs_sensitivity' href='#'>Sensitivity</a> -->
     </div>
 
@@ -90,7 +91,7 @@
       <div id='demand'>
         <table>
           <!-- One row per choice -->
-          <% structure.choices[16..33].each do |choice| %>
+          <% structure.choices[15..31].each do |choice| %>
             <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
               <td class='name'>
                 <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
@@ -98,7 +99,7 @@
                 </a>
               </td>
               <td class='help'>
-                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
+                <a title='Nhấn vào để biết thêm chi tiết về ý nghĩa của các lựa chọn <%= choice.levels.to_a.join(' ')%>.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
               </td>
               <!-- One cell per level for that choice -->
               <% choice.levels.each.with_index do |level,i| %>
@@ -115,7 +116,7 @@
       <!-- The middle column -->
       <div id='supply'>
         <table>
-          <% structure.choices[0..15].each do |choice| %>
+          <% structure.choices[0..14].each do |choice| %>
             <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
               <td class='name'>
                 <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
@@ -123,7 +124,7 @@
                 </a>
               </td>
               <td class='help'>
-                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
+                <a title='Nhấn vào để biết thêm chi tiết về ý nghĩa của các lựa chọn <%= choice.levels.to_a.join(' ')%>.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
               </td>
               <!-- One cell per level for that choice -->
               <% choice.levels.each.with_index do |level,i| %>
@@ -141,7 +142,7 @@
       <div id='other'>
         <table>
           <!-- this should actually go up to choice 42, but that isn't ready for prime time yet -->
-          <% structure.choices[34..35].each do |choice| %>
+          <% structure.choices[32..33].each do |choice| %>
             <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
               <td class='name'>
                 <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
@@ -149,7 +150,7 @@
                 </a>
               </td>
               <td class='help'>
-                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
+                <a title='Nhấn vào để biết thêm chi tiết về ý nghĩa của các lựa chọn <%= choice.levels.to_a.join(' ')%>.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
               </td>
               <!-- One cell per level for that choice -->
               <% choice.levels.each.with_index do |level,i| %>
@@ -162,13 +163,16 @@
             </tr>
           <% end %>
         </table>
-        <h4>Notes</h4>
+        <h4>Ghi chú</h4>
+        <!--<h4>Notes</h4> -->
+
         <table id='notes'>
-          <tr><td id='firstcell'><div class='help'>?</div></td><td>Question marks take you to one page descriptions of each choice</td></tr>
-          <tr><td><div class='level1'>1</div></td><td>The least effort possible on this choice.</td></tr>
-          <tr><td><div class='level2'>2</div></td><td>Viewed as ambitious, but reasonable by most experts.</td></tr>
-          <tr><td><div class='level3'>3</div></td><td>Viewed as unlikely without significant change from the current system and/or significant technological breakthroughs</td></tr>
-          <tr><td><div class='level4'>4</div></td><td>The upper end of what is thought to be physically plausible by the most optimistic observer.</td></tr>
+    
+          <tr><td id='firstcell'><div class='help'>?</div></td><td>Biểu tượng dẫn tới trang mô tả cho lĩnh vực ứng với các cấp độ khác nhau</td></tr>
+          <tr><td><div class='level1'>1</div></td><td>Ít nỗ lực nhất.</td></tr>
+          <tr><td><div class='level2'>2</div></td><td>Tham vọng nhưng khả thi.</td></tr>
+          <tr><td><div class='level3'>3</div></td><td>Khả thi khi có thay đổi lớn về chính sách và đột phá về khoa học công nghệ</td></tr>
+          <tr><td><div class='level4'>4</div></td><td>Mức cao nhất, tương ứng với tiềm năng kỹ thuật.</td></tr>
          <!-- <tr><td><div class='alternate'>A</div>&ndash;<div class='alternate'>D</div></td><td>A range of options where one alternative is not neccesiarily harder than another</td></tr> -->
         <!--  <tr class='primary_energy_notes'><td>Total used in the UK<sup>1</sup></td><td>Primary energy supply is normally higher than final energy demand, because of the energy used to generate electricity.</td></tr> -->
        <!--   <tr class='primary_energy_notes'><td>Targets<sup>2</sup></td><td>The targets up to 2027 exclude international aviation and shipping. They are also calculated as five year 'budgets', rather than the single year targets shown here.</td></tr> -->
@@ -233,19 +237,19 @@
 <!--          </div> -->
 
           <div id="imports" class="column">
-            <h2>Dependence on imported energy</h2>
-            <p>The calculator assumes that any available biomass is preferred over fossil fuels and that domestically produced fuels are preferred over imports.It assumes that fossil fuels are imported to cover any shortfall.</p>
+            <h2>Sự phụ thuộc vào năng lượng nhập khẩu</h2>
+            <p>Công cụ  calculator giả định năng lượng sinh khối ưu tiên hơn nhiên liệu hóa thạch và năng lượng sản xuất trong nước ưu tiên hơn năng lượng nhập khẩu. Thiết hụt năng lượng sẽ được đáp ứng bằng nhập khẩu.</p>
             <table id="imports">
               <tr><th class="description"></th><th colspan="2" class="year">2010</th><th></th><th colspan="2" class="year">2050</th></tr>
-              <tr><th class="description">Imports</th><th class="value">TWh/yr</th><th class="value">%</th><th></th><th class="value">TWh/yr</th><th class="value">%</th></tr>
+              <tr><th class="description">Nhập khẩu</th><th class="value">TWh/năm</th><th class="value">%</th><th></th><th class="value">TWh/năm</th><th class="value">%</th></tr>
             </table>
           </div>
           <div id="diversity" class="column">
-            <h2>Diversity of energy sources</h2>
-            <p>There may be a benefit from maintaining a diversity of energy sources:</p>
+            <h2>Sự đa dạng các nguồn năng lượng</h2>
+            <p>Việc duy trì tính đa dạng các nguồn năng lượng có thể mang lại lợi ích:</p>
             <table id="diversity">
               <tbody>
-              <tr><th class="description">Proportion of energy supply</th><th class="year">2010</th><th></th><th class="year">2050</th></tr>
+              <tr><th class="description">Tỷ lệ nguồn cung năng lượng</th><th class="year">2010</th><th></th><th class="year">2050</th></tr>
               </tbody>
             </table>
           </div>
