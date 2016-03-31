@@ -101,9 +101,13 @@ window.twentyfifty.views.primary_energy_chart = function() {
 
     t.transition().tween('text', function(d) {
       current = parseInt(this.textContent) || +d;
-      i = d3.interpolateRound(current, +d);
+//      i = d3.interpolateRound(current, +d);
+      i = d3.interpolate(current, +d);
+
       return function(t) {
-       return this.textContent = "" + (i(t)) + "% giảm giai đoạn 2010-2030";
+//       return this.textContent = "" + (i(t)) + "% giảm giai đoạn 2010-2030";
+       return this.textContent = "" + (i(t)).toFixed(1) + "% giảm giai đoạn 2010-2030";
+
       };
     });
 
