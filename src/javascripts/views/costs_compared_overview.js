@@ -1,7 +1,7 @@
 window.twentyfifty.views.costs_compared_overview = function() {
   __hasProp = {}.hasOwnProperty;
 
-  costsComparedOverviewHTML = "<div class='costscomparedoverview'>\n  <div id='cost_override_warning'>NB Some costs not on default values</div>\n  <h1>\n    Chi phí của kịch bản của bạn, so với các kịch bản khác.\n    Đây không phải chi phí cho sử dụng năng lượng của bạn.\n  </h1>\n  <div id='costscomparedoverview'></div>\n  " + window.costEssentialNotesHTML + "\n</div>";
+  costsComparedOverviewHTML = "<div class='costscomparedoverview'>\n  <div id='cost_override_warning'>NB Some costs not on default values</div>\n  <h1>\n    The cost of your pathway, compared with other pathways.\n    This is not your energy bill.\n  </h1>\n  <div id='costscomparedoverview'></div>\n  " + window.costEssentialNotesHTML + "\n</div>";
 
   categories = ["Fossil fuels", "Bioenergy", "Electricity", "Commerce", "Transport", "Industry", "Finance", "Agriculture", "Resident"];
 
@@ -59,7 +59,7 @@ window.twentyfifty.views.costs_compared_overview = function() {
     this.r = new Raphael('costscomparedoverview', this.w, this.h);
     this.x = d3.scale.linear().domain([0, 7000]).range([250, this.w - 30]).nice();
     this.y = d3.scale.ordinal().domain(all_pathways).rangeRoundBands([25, this.h - 20], 0.25);
-    this.r.text(250, 30, "Di chuột qua thanh được tô mầu để biết nó thể hiện gì. Nhấn vào thanh để biết thêm chi tiết").attr({
+    this.r.text(250, 30, "Move your mouse over a coloured bar to see what it refers to. Click on a bar to see more detail").attr({
       'text-anchor': 'start'
     });
     _ref = twentyfifty.comparator_pathways;
@@ -74,11 +74,11 @@ window.twentyfifty.views.costs_compared_overview = function() {
       'fill': '#FCFF9B',
       'stroke': 'none'
     });
-    this.r.text(30, this.y("chosen") + 9, "Kịch bản của bạn").attr({
+    this.r.text(30, this.y("chosen") + 9, "Your pathway").attr({
       'text-anchor': 'start',
       'font-weight': 'bold'
     });
-    this.r.text(30, this.y("chosen") + 27, "Nhấn vào biểu đồ để so sánh chi tiết\ncác nhóm chi phí").attr({
+    this.r.text(30, this.y("chosen") + 27, "You can click on the chart to make a more\ndetailed comparison of specific costs").attr({
       'text-anchor': 'start'
     });
     _ref1 = twentyfifty.comparator_pathways;
@@ -147,7 +147,7 @@ window.twentyfifty.views.costs_compared_overview = function() {
       }
       this.boxes[code] = b;
     }
-    this.r.text(this.x(0), this.h - 5, "Chi phí tuyệt đối tới xã hội của toàn bộ hệ thống năng lượng (trung bình theo giá đô la thực chưa chiết khấu và tính theo đầu người/năm giai đoạn 2010-2050)").attr({
+    this.r.text(this.x(0), this.h - 5, "The absolute cost to society of the whole energy system (mean undiscounted real dollars per person per year 2010-2050)").attr({
       'text-anchor': 'start',
     'font-weight': 'bold',
     'fill': '#008000'

@@ -109,28 +109,28 @@ window.twentyfifty.views.map = function() {
   };
 
   labels = {
-    'I.a': 'Số lượng nhà máy điện khí 0,75 GW',
-    'I.b': 'Số lượng nhà máy điện than 0,6 GW',
-    'I.c': 'Số lượng nhà máy CCS 0,6 GW',	
-    'I.d': 'Số lượng nhà máy nhiệt điện dầu 0,6 GW',
-    'I.e': 'Số lượng nhà máy nhiệt điện than 0,6 GW để cân bằng cung-cầu',		
-    'II.a': 'Số lượng nhà máy điện hạt nhân 1 GW',
-    'IV.a': 'Diện tích hồ chứa của thủy điện lớn',
-    'III.a.1': 'Diện tích chiếm của điện gió đất liền nếu tỷ lệ là 32,6 W/m2',
-    'III.a.2': 'Diện tích Chiếm của điện gió ngoài khơi nếu tỷ lệ là 228,2 W/m2',
-    'III.a.3': 'Diện tích chiếm của điện gió ven bờ nếu tỷ lệ là 228,2 W/m2',
-    'III.b': 'Diện tích hồ chứa của thủy điện nhỏ',
+    'I.a': 'Nr of 0.75 GW gas power stations',
+    'I.b': 'Nr of 0.6 GW coal power stations',
+    'I.c': 'Nr of 0.6 CCS power stations',	
+    'I.d': 'Nr of 0.6 GW oil power stations',
+    'I.e': 'Nr of 0.6 GW coal balancing stations',		
+    'II.a': 'Nr of 1 GW nuclear power station',
+    'IV.a': 'Large hydro landtake',
+    'III.a.1': 'Onshore wind if 32.6 W/m2',
+    'III.a.2': 'Offshore wind if 228.2 W/m2',
+    'III.a.3': 'Nearshore wind if 228.2 W/m2',
+    'III.b': 'Small hydro reservoir',
     'III.c': '0.01 GW solar CSP',
-    'VI.a.Biocrop': 'Diện tích cây nhiên liệu sinh học',
-    'VI.a.Forestry': 'Diện tích rừng',    
-    'V.a': 'Diện tích chiếm nhà máy điện Pin mặt trời nếu tỷ lệ là 50 MW/km2',
-    'III.d': 'Số lượng nhà máy điện địa nhiệt 0,02 GW',
-    'III.e': 'Số lượng nhà máy điện thủy triều 0,005 GW',    
-    'III.f.biomass': 'Số lượng nhà máy điện sinh khối 0,01 GW',
-    'III.f.biogas': 'Số lượng nhà máy điện sinh học 0,005 GW',
-    'III.f.landfill': 'Số lượng nhà máy điện đốt khí chôn lấp rác 0,005 GW',
-    'III.f.incineration': 'Số lượng nhà máy điện đốt rác 0,005 GW',
-    'VIII.c': 'Số lượng nhà máy thủy điện tích năng 0,3 GW'               
+    'VI.a.Biocrop': 'Area of biocrop',
+    'VI.a.Forestry': 'Area of forest',    
+    'V.a': 'Solar PV if 50 MW/km2',
+    'III.d': '0.02 GW geothermal power station',
+    'III.e': '0.005 GW tidal power station',    
+    'III.f.biomass': 'Nr. of 0.01 GW biomass power station',
+    'III.f.biogas': 'Nr. of 0.005 GW biogas power station',
+    'III.f.landfill': 'Nr. of 0.005 GW landfill power station',
+    'III.f.incineration': 'Nr. of 0.005 GW waste incineration power station',
+    'VIII.c': 'Nr of 0.3 GW PSP'               
   };
 
   pointSizes = {
@@ -158,7 +158,7 @@ window.twentyfifty.views.map = function() {
     r.image(mapimage_url, map_offset_x, map_offset_y, map_width, map_height);
 
     // Title
-    r.text(20, 10, "Minh họa tỷ lệ chiếm đất và mặt biển năm 2050").attr({
+    r.text(20, 10, "Illustration of scale of land and sea use in 2050 (positions are arbitrary)").attr({
       'font-weight': 'bold',
       'text-anchor': 'start'
     });
@@ -207,7 +207,7 @@ window.twentyfifty.views.map = function() {
 
     // Now deal with the objects that aren't on the map. In this case a stack of circles
     this.points = r.set();
-    r.text(700, 10, "Minh họa số lượng các nhà máy nhiệt điện vào năm 2050").attr({ 'font-weight': 'bold', 'text-anchor': 'start' });
+    r.text(700, 10, "Illustration of the number of thermal power stations in 2050 (scales and positions are arbitrary)").attr({ 'font-weight': 'bold', 'text-anchor': 'start' });
   }
 
   // This is a helper method for drawing the blocks of circles representating power stations of a particular type

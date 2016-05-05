@@ -4961,7 +4961,6 @@ class Model
     attach_function 'ghg_k15', [], ExcelValue.by_value
     attach_function 'ghg_l15', [], ExcelValue.by_value
     attach_function 'ghg_m15', [], ExcelValue.by_value
-    attach_function 'ghg_e21', [], ExcelValue.by_value
     # end of GHG
     attach_function 'electricity_d106', [], ExcelValue.by_value
     attach_function 'electricity_e106', [], ExcelValue.by_value
@@ -7103,7 +7102,6 @@ class Model
     attach_function 'output_finalenergydemand', [], ExcelValue.by_value
     attach_function 'output_flows', [], ExcelValue.by_value
     attach_function 'output_ghg_by_ipcc_sector', [], ExcelValue.by_value
-    attach_function 'output_ghg_percentage_reduction', [], ExcelValue.by_value
     attach_function 'output_imports_proportion', [], ExcelValue.by_value
     attach_function 'output_imports_quantity', [], ExcelValue.by_value
     attach_function 'output_primaryenergysupply', [], ExcelValue.by_value
@@ -7126,7 +7124,6 @@ class Model
     attach_function 'output_finalenergydemand', [], ExcelValue.by_value
     attach_function 'output_flows', [], ExcelValue.by_value
     attach_function 'output_ghg_by_ipcc_sector', [], ExcelValue.by_value
-    attach_function 'output_ghg_percentage_reduction', [], ExcelValue.by_value
     attach_function 'output_imports_proportion', [], ExcelValue.by_value
     attach_function 'output_imports_quantity', [], ExcelValue.by_value
     attach_function 'output_primaryenergysupply', [], ExcelValue.by_value

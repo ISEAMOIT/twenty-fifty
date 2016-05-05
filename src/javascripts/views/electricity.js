@@ -11,18 +11,18 @@ window.twentyfifty.views.electricity = function() {
       .attr('class', 'chart');
 
     this.demand_chart = timeSeriesStackedAreaChart()
-      .title("Nhu cầu điện năng")
-      .unit('TWh/năm')
+      .title("Electricity Demand")
+      .unit('TWh/yr')
       .max_value(2000);
 
     this.supply_chart = timeSeriesStackedAreaChart()
-      .title("Cung cấp điện năng")
-      .unit('TWh/năm')
+      .title("Electricity Supply")
+      .unit('TWh/yr')
       .max_value(2000);
 
     this.emissions_chart = timeSeriesStackedAreaChart()
-      .title("Phát thải từ SX điện")
-      .unit('MtCO2e/năm')
+      .title("Emissions from Electricity")
+      .unit('MtCO2e/yr')
       .min_value(0)
       .max_value(2000);
   };

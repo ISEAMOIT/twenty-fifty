@@ -316,7 +316,7 @@ window.twentyfifty.views.costs_compared_within_sector = function() {
       }
       this.boxes[code] = b;
     }
-    this.r.text(this.x(0), this.h - 5, "Chi phí tuyệt đối đối với xã hội của toàn bộ hệ thống năng lượng (mức trung bình theo đô la thực không chiết khấu trên đầu người/năm 2010-2050)").attr({
+    this.r.text(this.x(0), this.h - 5, "The absolute cost to society of the whole energy system (mean undiscounted real dolars per person per year 2010-2050)").attr({
       'text-anchor': 'start',
     'font-weight': 'bold',
     'fill': '#008000'
